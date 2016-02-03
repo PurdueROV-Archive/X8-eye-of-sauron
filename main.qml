@@ -97,6 +97,18 @@ Window {
                     id: dragArea
                     anchors.fill: parent
                     drag.target: parent
+
+                    onClicked: {
+                        video1.stop()
+                        video2.stop()
+                        var source2 = video1.source
+                        video1.source = video2.source
+                        video2.source = source2
+                        video1.play()
+                        video2.play()
+                    }
+
+
                 }
                 Video {
                     id:video2
@@ -135,6 +147,17 @@ Window {
                     id: dragArea2
                     anchors.fill: parent
                     drag.target: parent
+                    onClicked: {
+                        video1.stop()
+                        video3.stop()
+                        var source1 = video1.source
+                        video1.source = video3.source
+                        video3.source = source1
+                        video1.play()
+                        video3.play()
+
+
+                    }
                 }
                 Video {
                     id:video3
